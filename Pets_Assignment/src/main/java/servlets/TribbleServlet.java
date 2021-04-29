@@ -23,16 +23,7 @@ public class TribbleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 
-            BufferedReader reader = req.getReader();
-            StringBuilder sb = new StringBuilder();
 
-            String line;
-            while((line = reader.readLine()) != null){
-                sb.append(line);
-            }
-            String jsonString = sb.toString();
-
-        //String json = null;
         try {
             String json = objectMapper.writeValueAsString(tribbleDOA.viewAll());
             System.out.println(json);
