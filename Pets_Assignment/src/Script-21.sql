@@ -7,6 +7,7 @@ create table Tribble(
 	color varchar(255),
 	noise varchar(255),
 	description varchar(255)
+	ON DELETE CASCADE
 );
 
 
@@ -26,11 +27,12 @@ values ( 'RocksALot', 'Tan', 'coo' , 'Spikes and Medium');
 
 
 
-create table Labs(
+create table Labs1(
 	LabId serial,
 	labName varchar(255),
 	tribbleID int,
 	constraint tribble_fk foreign key(tribbleID) references Tribble(ID)
+	ON DELETE CASCADE
 );
 
 --Did not have time to fix with these next two tables
@@ -48,7 +50,7 @@ create table Labs(
 --
 
 --drop table Lab;
---select * from labs;
+select * from labs;
 --select tribble.name from labs , tribble where tribble.id = labs.labid and labid = 1;
 
 

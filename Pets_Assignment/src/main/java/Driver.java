@@ -21,6 +21,6 @@ public class Driver {
       LabsDAO labsDAO = new LabsDAO();
       //labsDAO.viewAll();
       Labs labs = new Labs("New Lab", 3);
-      labsDAO.addLab(labs);
+      labsDAO.deleteLab("New Lab");
   }
 }

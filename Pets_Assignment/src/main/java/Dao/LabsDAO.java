@@ -35,7 +35,7 @@ public class LabsDAO {
     }
 
     public Labs deleteLab(String name){
-        String sqlQuery = "Delete from labs where name = ?";
+        String sqlQuery = "Delete from labs where labName = ?";
         try(Connection connection = jdbcConnect.getConnection()){
             PreparedStatement stmt = connection.prepareStatement(sqlQuery);
             stmt.setString(1, name);
